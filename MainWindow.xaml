@@ -1,0 +1,25 @@
+﻿<Window x:Class="WPF_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600" WindowStartupLocation="CenterScreen" FontFamily="Verdana" MaxWidth="600" MaxHeight="600" MinHeight="600" MinWidth="600" ResizeMode="NoResize">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF40789C" Offset="1"/>
+            <GradientStop Color="White" Offset="0"/>
+        </RadialGradientBrush>
+    </Window.Background>
+    <Grid MinWidth="600" MinHeight="600" MaxWidth="600" MaxHeight="600">
+        <Button Content="Вход" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.223,-1.184" Width="80" Height="35" Background="#FFCAEDFF" Click="LogIn"/>
+        <Label Content="Нет аккаунта?" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="getPassword_Box" HorizontalAlignment="Center" Margin="0,283,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="170,279,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="getLogin_Box" HorizontalAlignment="Center" Margin="0,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="174,236,0,0" VerticalAlignment="Top"/>
+        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,385,0,0" VerticalAlignment="Top" Background="#00DDDDDD" BorderBrush="#00707070" Foreground="#FF0800FF" Click="Register" BorderThickness="0,0,0,0"/>
+
+    </Grid>
+</Window>

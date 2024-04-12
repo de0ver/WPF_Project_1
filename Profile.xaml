@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPF_Project.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Project"
+        mc:Ignorable="d"
+        Title="Profile" Height="600" Width="600" MinWidth="600" MinHeight="600" MaxWidth="600" MaxHeight="600" FontFamily="Verdana">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="White"/>
+            <GradientStop Color="#FFFFDC8E" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="255" Stroke="Black" VerticalAlignment="Center" Width="313" Fill="White"/>
+        <Label Content="Ваше имя:" HorizontalAlignment="Left" Margin="152,185,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ваша почта: " HorizontalAlignment="Left" Margin="152,215,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userEmailProfile" Content="" HorizontalAlignment="Left" Margin="258,215,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userNameProfile" Content="" HorizontalAlignment="Left" Margin="258,185,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
