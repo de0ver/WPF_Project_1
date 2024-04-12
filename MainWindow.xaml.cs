@@ -32,20 +32,20 @@ namespace WPF_Project
 
         private void LogIn(object sender, RoutedEventArgs e)
         {
-            if ((getLogin_Box.Text == adminLogin || getLogin_Box.Text == "guest" || getLogin_Box.Text == userLogin)
-                && ((getPassword_Box.Password == adminPassword || getPassword_Box.Password == "guest" || getPassword_Box.Password == userPassword)))
+            if ((getLogin_Box.Text == adminLogin || getLogin_Box.Text == userLogin)
+                && ((getPassword_Box.Password == adminPassword || getPassword_Box.Password == userPassword)))
             {
-                MessageBox.Show("Добро пожаловать!");
+                MessageBox.Show(this, "Успех", "Добро пожаловать!", MessageBoxButton.OK, MessageBoxImage.Exclamation, MessageBoxResult.OK);
                 Profile profile = new Profile();
                 profile.UserName = userName;
                 profile.UserEmail = userEmail;
                 profile.userNameProfile.Content = userName;
                 profile.userEmailProfile.Content = userEmail;
                 profile.Show();
-                Close();
+                Hide();
             } else
             {
-                MessageBox.Show("Неправильный логин или пароль!");
+                MessageBox.Show(this, "Ошибка", "Неправильный логин или пароль!", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
         }
 
@@ -53,7 +53,14 @@ namespace WPF_Project
         {
             Registration registration = new Registration();
             registration.Show();
-            Close();
+            Hide();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
         }
     }
 }

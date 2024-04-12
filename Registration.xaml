@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Project"
         mc:Ignorable="d"
+       
         Title="Registration" Height="600" Width="600" MinWidth="600" MinHeight="600" MaxWidth="600" MaxHeight="600" HorizontalContentAlignment="Center" FontFamily="Verdana" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Background>
         <RadialGradientBrush>
