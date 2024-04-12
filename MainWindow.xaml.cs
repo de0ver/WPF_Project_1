@@ -42,7 +42,7 @@ namespace WPF_Project
                 profile.userNameProfile.Content = userName;
                 profile.userEmailProfile.Content = userEmail;
                 profile.Show();
-                Hide();
+                Close();
             } else
             {
                 MessageBox.Show("Неправильный логин или пароль!");
@@ -53,7 +53,7 @@ namespace WPF_Project
         {
             Registration registration = new Registration();
             registration.Show();
-            Hide();
+            Close();
         }
     }
 }

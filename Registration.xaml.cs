@@ -73,7 +73,7 @@ namespace WPF_Project
 
                 MessageBox.Show("Все отлично!");
                 mainWindow.Show();
-                Hide();
+                Close();
             }
         }
     }
