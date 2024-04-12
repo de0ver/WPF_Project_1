@@ -35,7 +35,7 @@ namespace WPF_Project
             if ((getLogin_Box.Text == adminLogin || getLogin_Box.Text == userLogin)
                 && ((getPassword_Box.Password == adminPassword || getPassword_Box.Password == userPassword)))
             {
-                MessageBox.Show(this, "Успех", "Добро пожаловать!", MessageBoxButton.OK, MessageBoxImage.Exclamation, MessageBoxResult.OK);
+                MessageBox.Show(this, "Успех", "Добро пожаловать!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
                 Profile profile = new Profile();
                 profile.UserName = userName;
                 profile.UserEmail = userEmail;
