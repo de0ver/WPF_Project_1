@@ -18,7 +18,6 @@ namespace WPF_Project
     /// </summary>
     public partial class Profile : Window
     {
-        public String UserName = null, UserEmail = null, UserPassword = null;
         public Profile()
         {
             InitializeComponent();

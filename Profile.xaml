@@ -16,8 +16,12 @@
         <Rectangle HorizontalAlignment="Center" Height="255" Stroke="Black" VerticalAlignment="Center" Width="313" Fill="White"/>
         <Label Content="Ваше имя:" HorizontalAlignment="Left" Margin="152,185,0,0" VerticalAlignment="Top"/>
         <Label Content="Ваша почта: " HorizontalAlignment="Left" Margin="152,215,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="userEmailProfile" Content="" HorizontalAlignment="Left" Margin="258,215,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ваш логин: " HorizontalAlignment="Left" Margin="152,245,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ваш uid: " HorizontalAlignment="Left" Margin="152,275,0,0" VerticalAlignment="Top"/>
         <Label x:Name="userNameProfile" Content="" HorizontalAlignment="Left" Margin="258,185,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userEmailProfile" Content="" HorizontalAlignment="Left" Margin="258,215,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userLoginProfile" Content="" HorizontalAlignment="Left" Margin="258,245,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userIdProfile" Content="" HorizontalAlignment="Left" Margin="258,275,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -21,11 +21,6 @@ namespace WPF_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        static String admin = "admin";
-        public String getLogin = null, getPassword = null;
-        public String adminLogin = admin, adminPassword = admin, adminName = admin, adminEmail = admin;
-        public String userLogin = null,  userPassword = null, userEmail = null, userName = null;
         public SqliteConnection connection = new SqliteConnection("Data Source=user_data.db");
         public SqliteCommand command;
         private bool isLogged = false;
@@ -37,31 +32,26 @@ namespace WPF_Project
             connection.Open();
         }
 
-private void LogIn(object sender, RoutedEventArgs e)
+        private void LogIn(object sender, RoutedEventArgs e)
         {
             command = new SqliteCommand("SELECT * FROM user_data", connection);
             SqliteDataReader reader = command.ExecuteReader();
+
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
-                    var id = reader.GetValue(0);
-                    var login = reader.GetValue(1);
-                    var password = reader.GetValue(2);
-                    var email = reader.GetValue(3);
-                    var username = reader.GetValue(4);
+                    User user = new User(int.Parse(reader.GetValue(0).ToString()), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), reader.GetValue(3).ToString(), reader.GetValue(4).ToString());
 
-                    //MessageBox.Show("ID: " + id + "; LOGIN: " + login + "; PASSWORD: " + password + "; EMAIL: " + email + "; USERNAME: " + username + "; ");
-
-                    if (getLogin_Box.Text == login.ToString() && getPassword_Box.Password == password.ToString())
+                    if (getLogin_Box.Text == user.Login && getPassword_Box.Password == user.Password)
                     {
                         isLogged = true;
-                        MessageBox.Show(this, "Успех", "Добро пожаловать!", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+                        MessageBox.Show(this, "Добро пожаловать!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
                         Profile profile = new Profile();
-                        profile.UserName = username.ToString();
-                        profile.UserEmail = email.ToString();
-                        profile.userNameProfile.Content = username.ToString();
-                        profile.userEmailProfile.Content = email.ToString();
+                        profile.userNameProfile.Content = user.Username;
+                        profile.userEmailProfile.Content = user.Email;
+                        profile.userLoginProfile.Content = user.Login;
+                        profile.userIdProfile.Content = user.Id;
                         profile.Show();
                         Hide();
                     }
@@ -74,7 +64,7 @@ private void LogIn(object sender, RoutedEventArgs e)
 
                 if (!isLogged)
                 {
-                    MessageBox.Show("Такого пользователя не существует!");
+                    MessageBox.Show(this, "Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
                 }
             }
         }
